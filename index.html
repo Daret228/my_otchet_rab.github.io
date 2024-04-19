@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cool Company</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+    </head>
+
+    <body>
+        <header>
+            <div class="conteiner-header">
+                <div class="conteiner-header__left">
+                    <div class="conteiner-header__logo">
+                        <img src="img/logo.png" alt="" class="logo" />
+                    </div>
+                    <h1 class="conteiner-header__left__h1 text--white">
+                        С помощью нас <br />вы сможете создать то, о чем
+                    </h1>
+                    <span class="conteiner-header__left__span text--white" id="spn"
+                        >желаете!</span
+                    >
+                    <p class="conteiner-header__left__p text--white">
+                        Наши возможности + опыт позволяет Вам достичь огромного
+                        успеха. Мы верим в вас! И знаем это на все 100%. Вас не
+                        остановить!
+                    </p>
+                    <a href="#" class="conteiner-header__left__button"
+                        >Узнать больше...</a
+                    >
+                </div>
+                <div class="conteiner-header__right">
+                    <img
+                        src="img/header-img.png"
+                        alt=""
+                        class="conteiner-header__right__img"
+                    />
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="section-first">
+                <div class="section-first__title">
+                    <h1  class="title animate__animated animate__pulse animate__infinite">Что Вам необходимо?</h1>
+                </div>
+                <div class="section-first__container">
+                    <div class="section-first__container-block">
+                        <img src="img/f3.png" alt="" class="section-first__container-img"/>
+                        <h2>Первый блок</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                        </p>
+                    </div>
+                    <div class="section-first__container-block">
+                        <img src="img/f4.png" alt="" class="section-first__container-img"/>
+                        <h2>Второй блок</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                        </p>
+                    </div>
+                    <div class="section-first__container-block">
+                        <img src="img/f5.png" alt="" class="section-first__container-img"/>
+                        <h2>Третий блок</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-second-dop">
+                <h1 class="title animate__animated animate__heartBeat">Регистрация</h1>
+                <form id="form">
+                    <input type="text" id="name" placeholder="Name">
+                    <span class="error" id="nameError"></span><br>
+                    
+                    <input type="password" id="pass" placeholder="Password">
+                    <span class="error" id="passError"></span><br>
+                    
+                    <input type="email" id="email" placeholder="Email">
+                    <span class="error" id="emailError"></span><br>
+                    
+                    <input type="tel" id="tell" placeholder="Phone">
+                    <span class="error" id="tellError"></span><br>
+                    
+                    <button type="submit">Отправить</button>
+                </form>
+            </section>
+
+            <script src="js/form_valid.js"></script>
+
+            <section class="section-second">
+                <h1 class="title animate__animated animate__heartBeat">Форма заказа обратного звонка</h1>
+                <form action="" placeholder="">
+                    <input type="text" placeholder="Имя" required pattern="[a-z]+|[а-я]+">
+                    <input type="email" placeholder="Email" required>
+                    <input type="tel" placeholder="Телефон" requiredy pattern="((\+7)|8)\d{10}">
+                    <input type="text" placeholder="Какая тема интересует?" required>
+                    <button type="submit" method="post">Отправить запрос!</button>
+                </form>
+            </section>
+            
+        </main>
+
+        <footer class="footer text--white" id="foot">ⒸВсё на этом сайте защищено</footer>
+        <script src="js/switch_color.js"></script>
+    </body>
+</html>
