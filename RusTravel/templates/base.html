@@ -1,0 +1,72 @@
+<!-- main/templates/base.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RusTravel</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar-brand img {
+            height: 100%; /* Задаем высоту логотипа в навигационной панели на 100% */
+        }
+        .navbar-nav .nav-link {
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        .btn-login {
+            background-color: #000; /* Черный цвет кнопки */
+            color: #fff;
+        }
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+            padding: 20px;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 500px; /* Высота всех изображений */
+            object-fit: cover; /* Обеспечивает одинаковый размер изображений */
+            filter: brightness(50%); /* Затемнение изображения */
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="{% static 'images/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="logo" loading="lazy">
+            RusVoyage
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Отзывы</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">О нас</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Помощь</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-login text-white" href="#">Войти</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Подключение Bootstrap JS и jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
