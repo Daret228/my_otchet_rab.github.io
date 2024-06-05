@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="container-feedback">
+    <div class="left-side">
+        <div class="feedback-title-left">
+        <h2>Поделитесь с нами вашими впечатлениями о нашем путеводителе!</h2>
+        </div>
+        <form id="feedback-form">
+            <label for="fio">Ваше имя:</label>
+            <input type="text" id="fio" name="fio" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Ваш отзыв:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+    <div class="right-side">
+        <div class="feedback-title-right">
+            <h2>а тут почитайте отзывы других я это перепишу Лёва</h2>
+            </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
