@@ -46,9 +46,18 @@ body {
   padding: 20px;
   gap: 10px;
 }
-.modal-body .left,
+
+.modal-body .left{
+  flex: 0.95;
+  padding: 20px;
+  border-radius: 15px;
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
 .modal-body .right {
-  flex: 1;
+  flex: 0.99;
   padding: 20px;
   border-radius: 15px;
   position: relative;
