@@ -36,3 +36,7 @@ def login_view(request):
         else:
             messages.error(request, 'Неправильное имя пользователя или пароль')
     return render(request, 'login.html')
+
+
+def feedback(request):
+    return render(request, 'feedback.html')
