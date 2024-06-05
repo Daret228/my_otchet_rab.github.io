@@ -10,38 +10,17 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="{% static 'images/logo.png' %}" width="45" height="45" class="d-inline-block" alt="logo" loading="lazy">
-            RusVoyage
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Отзывы</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">О нас</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Помощь</a>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link btn btn-login text-white" data-toggle="modal" data-target="#authModal">Войти</button>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Модальное окно для авторизации -->
+    {% include 'modal_auth.html' %}
+    <!-- Навигационный бар -->
+    {% include 'navbar.html' %}
 
     <div class="container">
         {% block content %}
         {% endblock %}
     </div>
 
-    {% include 'modal_auth.html' %}
+    
 
     <!-- Подключение Bootstrap JS и jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
