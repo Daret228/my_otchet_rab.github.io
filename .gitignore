@@ -1,3 +1,9 @@
 /.venv
-RusTravel/main/__pycache__
+*.pyc
+*.egg-info
+*.swp
+*.swo
+*.log
+*.lock
+*.sqlite3
 
