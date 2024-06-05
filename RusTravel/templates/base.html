@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
+    {% include 'modal_auth.html' %}
+    <!-- Навигационный бар -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
             <img src="{% static 'images/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="logo" loading="lazy">
@@ -41,7 +43,7 @@
         {% endblock %}
     </div>
 
-    {% include 'modal_auth.html' %}
+    
 
     <!-- Подключение Bootstrap JS и jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
