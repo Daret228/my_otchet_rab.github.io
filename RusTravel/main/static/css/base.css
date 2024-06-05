@@ -118,7 +118,9 @@ body {
 /* Стилизация страницы с отзывами */
 
 .feedback-title-left {
-margin-top: -25px;
+  margin-left: 35px;
+  width: 90%;
+  margin-top: -25px;
   text-align: center;
 }
 
