@@ -11,8 +11,11 @@ body {
   border-bottom: 1px solid #dee2e6;
 }
 .navbar .navbar-brand {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
+  align-items: center;
+  padding-top: 10px;
+  vertical-align: baseline;
 }
 .navbar .navbar-nav .nav-link {
   margin-right: 20px;
@@ -48,7 +51,7 @@ body {
 }
 
 .modal-body .left{
-  flex: 0.95;
+  flex: 0.98;
   padding: 20px;
   border-radius: 15px;
   position: relative;
@@ -66,13 +69,13 @@ body {
 }
 .modal-body .left.left,
 .modal-body .right.left {
-  background-color: #f0e68c;
+  background-color: #d69fa4;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
 .modal-body .left.right,
 .modal-body .right.right {
-  background-color: #add8e6;
+  background-color: #c2b9b0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
