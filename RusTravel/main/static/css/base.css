@@ -176,7 +176,7 @@ input, textarea {
   border-radius: 4px;
 }
 
-button[type="submit"] {
+.btn-feedback {
   background-color: #000000;
   color: #fff;
   padding: 10px 20px;
@@ -185,6 +185,6 @@ button[type="submit"] {
   cursor: pointer;
   }
   
-  button[type="submit"]:hover {
+  .btn-feedback:hover {
   background-color: #464646;
   }
