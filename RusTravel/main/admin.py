@@ -1,7 +1,5 @@
 from django.contrib import admin
+from main.models import Account, UsersFeedback
 
-from RusTravel.main.models import UsersFeedback
-
-# Register your models here.
-
+admin.site.register(Account)
 admin.site.register(UsersFeedback)
