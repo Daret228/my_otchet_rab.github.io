@@ -12,7 +12,7 @@
 
                 <div class="left">
                     <h2>Регистрация</h2>
-                    <form method="post" action="{% url 'register' %}">
+                    <form method="post" action="{% url 'index' %}">
                         {% csrf_token %}
                         <div class="form-group">
                             <input type="text" name="name" class="form-control" placeholder="Имя" required>
@@ -37,7 +37,7 @@
 
                 <div class="right">
                     <h2>Войти</h2>
-                    <form method="post" action="#">
+                    <form method="post" action="{% url 'index' %}">
                         {% csrf_token %}
                         <div class="form-group">
                             <input type="text" name="username" class="form-control" placeholder="Имя или Email или номер телефона" required>
