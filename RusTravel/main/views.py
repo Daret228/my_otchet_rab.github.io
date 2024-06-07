@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
+from .forms import UsersFeedbackForm
 
 
 def index(request):
@@ -9,7 +10,13 @@ def index(request):
 
 
 def feedback(request):
-    return render(request, 'feedback.html')
+
+    form = UsersFeedbackForm()
+
+    data = {
+        'form': form}
+
+    return render(request, 'feedback.html', data)
 
 # def register(request):
 #     if request.method == 'POST':

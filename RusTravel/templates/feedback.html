@@ -2,6 +2,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block content %}
 
 
@@ -10,15 +11,15 @@
         <div class="feedback-title-left">
         <h2>Поделитесь с нами вашими впечатлениями о нашем путеводителе!</h2>
         </div>
-        <form id="feedback-form">
-            <label for="fio">Ваше имя:</label>
-            <input type="text" id="fio" name="fio" required>
+        <form method="POST" сlass="feedback-form">
+            {% csrf_token %}
+
+            {{form.username}}
+            {{form.email}}
+            {{form.feedback}}
             
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Ваш отзыв:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+
+           
             
             <button class="btn-feedback" type="submit">Отправить</button>
         </form>

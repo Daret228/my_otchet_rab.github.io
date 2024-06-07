@@ -124,14 +124,16 @@ body {
   text-align: center;
 }
 
-#feedback-form {
+.feedback-form {
+flex-direction: column;
 width: 80%;
 margin: 20px auto;
 padding: 20px;
+margin-bottom: 10px;
 border: 1px solid #ccc;
 border-radius: 10px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+} 
 
 
 .container-feedback {
@@ -142,6 +144,7 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 133%;
     height: 80vh;
     margin-left: -180px;
+    
   }
  
   
@@ -157,12 +160,18 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 .right-side {
   width: 50%;
- 
+  padding-top: 5px;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
+width: 80%;
+margin: 20px auto;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 label {
