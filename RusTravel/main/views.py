@@ -6,7 +6,7 @@ from .forms import AccountForm
 
 
 def index(request):
-    error = ''
+    error = 'Всё хорошо'
     if request.method == 'POST':
         form = AccountForm(request.POST)
         if form.is_valid():
@@ -31,7 +31,7 @@ def index(request):
     else:
         form = AccountForm()
 
-    return render(request, 'index.html', {'form': form})
+    return render(request, 'index.html', {'form': form, 'error': error})
 
 
 def feedback(request):
