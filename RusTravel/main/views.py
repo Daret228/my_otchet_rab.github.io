@@ -2,11 +2,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
-<<<<<<< HEAD
-from .forms import UsersFeedbackForm
-=======
-from .forms import AccountForm
->>>>>>> 8169530c22626ed0336631c10cbc5187b30d977e
+from .forms import AccountForm, UsersFeedbackForm
+
 
 
 def index(request):
