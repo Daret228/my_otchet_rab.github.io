@@ -36,11 +36,22 @@ def index(request):
 
 
 def feedback(request):
+    error= ''
+
+    if request.method == 'POST':
+        form = UsersFeedbackForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+        else: 
+            error = 'Введены неверные данные: имя пользователя или e-mail'
 
     form = UsersFeedbackForm()
 
     data = {
-        'form': form}
+        'form': form,
+        'error': error
+        }
     
     return render(request, 'feedback.html', data)
 
