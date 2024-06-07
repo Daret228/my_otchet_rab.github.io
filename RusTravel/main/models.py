@@ -6,6 +6,9 @@ class UsersFeedback (models.Model):
     email = models.CharField(max_length=30, blank=False)
     feedback = models.CharField(max_length=500, blank=False)
 
+    def __str__(self):
+        return self.username + " " + self.email
+
 # Таблица для регистрации
 class Account(models.Model):
     username = models.CharField(max_length=30, unique=True, blank=False)
