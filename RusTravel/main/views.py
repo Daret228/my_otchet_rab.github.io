@@ -2,6 +2,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
+from .forms import AccountForm
 
 
 def index(request):
@@ -11,32 +12,32 @@ def index(request):
 def feedback(request):
     return render(request, 'feedback.html')
 
-# def register(request):
-#     if request.method == 'POST':
-#         form = RegistrationForm(request.POST)
-#         if form.is_valid():
-#             name = form.cleaned_data['name']
-#             email = form.cleaned_data['email']
-#             phone = form.cleaned_data['phone']
-#             password = form.cleaned_data['password']
-#             password_confirm = form.cleaned_data['password_confirm']
+def register(request):
+    if request.method == 'POST':
+        form = AccountForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['username']
+            email = form.cleaned_data['email']
+            phone = form.cleaned_data['phone']
+            password = form.cleaned_data['password']
+            print(name, email, phone, password)
 
-#             if password == password_confirm:
-#                 if User.objects.filter(email=email).exists():
-#                     messages.error(request, 'Пользователь с таким email уже существует')
-#                 elif User.objects.filter(username=phone).exists():
-#                     messages.error(request, 'Пользователь с таким номером телефона уже существует')
-#                 else:
-#                     user = User.objects.create_user(username=phone, password=password, email=email, first_name=name)
-#                     user.save()
-#                     messages.success(request, 'Регистрация успешна')
-#                     return redirect('index')
-#             else:
-#                 messages.error(request, 'Пароли не совпадают')
-#     else:
-#         form = RegistrationForm()
+            if User.objects.filter(email=email).exists():
+                messages.error(request, 'Пользователь с таким email уже существует')
+            elif User.objects.filter(username=name).exists():
+                messages.error(request, 'Пользователь с таким номером телефона уже существует')
+            else:
+                user = User.objects.create_user(username=name, password=password, email=email, phone=phone)
+                user.save()
+                messages.success(request, 'Регистрация успешна')
+                return redirect('index')
 
-#     return render(request, 'index.html', {'form': form})
+        else:
+            messages.error(request, 'Попробуйте ещё раз')
+    else:
+        form = AccountForm()
+
+    return render(request, 'index.html', {'form': form})
 
 
 # def login_view(request):
