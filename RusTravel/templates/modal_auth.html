@@ -14,21 +14,11 @@
                     <h2>Регистрация</h2>
                     <form method="post" action="{% url 'index' %}">
                         {% csrf_token %}
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" placeholder="Имя" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" class="form-control" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="phone" class="form-control" placeholder="Номер телефона" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" name="password" class="form-control" placeholder="Пароль" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" name="password_confirm" class="form-control" placeholder="Подтверждение пароля" required>
-                        </div>
+                        {{ form.username }}
+                        {{ form.email }}
+                        {{ form.phone }}
+                        {{ form.password }}
+                        <span>{{ error }}</span>
                         <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
                     </form>
                 </div>
