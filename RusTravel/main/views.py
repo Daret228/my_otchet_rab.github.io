@@ -6,13 +6,7 @@ from .forms import AccountForm
 
 
 def index(request):
-    return render(request, 'index.html')
-
-
-def feedback(request):
-    return render(request, 'feedback.html')
-
-def register(request):
+    error = ''
     if request.method == 'POST':
         form = AccountForm(request.POST)
         if form.is_valid():
@@ -23,9 +17,9 @@ def register(request):
             print(name, email, phone, password)
 
             if User.objects.filter(email=email).exists():
-                messages.error(request, 'Пользователь с таким email уже существует')
+                error = 'Пользователь с таким email уже существует'
             elif User.objects.filter(username=name).exists():
-                messages.error(request, 'Пользователь с таким номером телефона уже существует')
+                error = 'Пользователь с таким номером телефона уже существует'
             else:
                 user = User.objects.create_user(username=name, password=password, email=email, phone=phone)
                 user.save()
@@ -38,6 +32,11 @@ def register(request):
         form = AccountForm()
 
     return render(request, 'index.html', {'form': form})
+
+
+def feedback(request):
+    return render(request, 'feedback.html')
+    
 
 
 # def login_view(request):

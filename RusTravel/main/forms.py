@@ -1,5 +1,5 @@
 from .models import Account
-from django.forms import ModelForm, TextInput
+from django.forms import ModelForm, TextInput, PasswordInput, EmailInput
 
 class AccountForm(ModelForm):
     class Meta:
@@ -7,21 +7,29 @@ class AccountForm(ModelForm):
         fields = ['username', 'email', 'phone', 'password']
         widgets = {
             'username': TextInput(attrs={
+                'required': True,
+                'type': 'text',
                 'class': 'form-control', 
-                'placeholder': 'Имя '
+                'placeholder': 'Имя'
                 }),
 
-            "email": TextInput(attrs={
+            "email": EmailInput(attrs={
+                'required': True,
+                'type': 'email',
                 'class': 'form-control',
                 'placeholder': 'Email'
                 }),
 
             'phone': TextInput(attrs={
+                'required': True,
+                'type': 'text',
                 'class': 'form-control',
                 'placeholder': 'Номер телефона'
                 }),
 
-            "password": TextInput(attrs={
+            "password": PasswordInput(attrs={
+                'required': True,
+                'type': 'password',
                 'class': 'form-control',
                 'placeholder': 'Пароль'
                 })
