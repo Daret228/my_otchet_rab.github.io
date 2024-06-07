@@ -24,7 +24,7 @@ class UsersFeedbackForm(ModelForm):
                 'class': 'feedback-form',
                 'placeholder': 'Ваш отзыв'
             })
-=======
+        }   
 from .models import Account
 from django.forms import ModelForm, TextInput, PasswordInput, EmailInput
 
@@ -60,5 +60,4 @@ class AccountForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Пароль'
                 })
->>>>>>> 8169530c22626ed0336631c10cbc5187b30d977e
         }
