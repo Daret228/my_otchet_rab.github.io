@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+from django import forms
 from .models import UsersFeedback
-from django.forms import ModelForm, Textarea, TextInput
-
+from django.forms import ModelForm, Textarea, TextInput, PasswordInput, EmailInput
+from .models import Account
 
 
 class UsersFeedbackForm(ModelForm):
@@ -25,8 +25,7 @@ class UsersFeedbackForm(ModelForm):
                 'placeholder': 'Ваш отзыв'
             })
         }   
-from .models import Account
-from django.forms import ModelForm, TextInput, PasswordInput, EmailInput
+
 
 class AccountForm(ModelForm):
     class Meta:

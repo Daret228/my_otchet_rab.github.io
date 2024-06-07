@@ -36,7 +36,6 @@ def index(request):
 
 
 def feedback(request):
-<<<<<<< HEAD
 
     form = UsersFeedbackForm()
 
@@ -71,10 +70,7 @@ def feedback(request):
 #         form = RegistrationForm()
 
 #     return render(request, 'index.html', {'form': form})
-=======
-    return render(request, 'feedback.html')
     
->>>>>>> 8169530c22626ed0336631c10cbc5187b30d977e
 
 
 # def login_view(request):
