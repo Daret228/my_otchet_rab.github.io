@@ -26,7 +26,7 @@ def index(request):
                 user.save()
                 messages.success(request, 'Регистрация успешна')
                 return redirect('index')
-
+            
         else:
             messages.error(request, 'Попробуйте ещё раз')
     else:
@@ -41,7 +41,7 @@ def feedback(request):
 
     data = {
         'form': form}
-
+    
     return render(request, 'feedback.html', data)
 
 # def register(request):
