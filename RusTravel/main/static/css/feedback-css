@@ -1,0 +1,84 @@
+/* Стилизация страницы с отзывами */
+
+.feedback-title-left {
+  margin-left: 35px;
+  width: 90%;
+  margin-top: -25px;
+  text-align: center;
+}
+
+
+.feedback-form {
+flex-direction: column;
+width: 80%;
+margin: 20px auto;
+padding: 20px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} 
+
+
+
+.container-feedback {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 133%;
+  height: 80vh;
+  margin-left: -180px;
+    
+  }
+ 
+  
+.left-side {
+  width: 50%;
+  padding-top: 5px;
+  
+}
+
+.feedback-title-right {
+  text-align: center;
+}
+
+.right-side {
+  width: 50%;
+  padding-top: 5px;
+}
+
+/* form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+label {
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-feedback {
+  background-color: #000000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  }
+  
+  .btn-feedback:hover {
+  background-color: #464646;
+  }

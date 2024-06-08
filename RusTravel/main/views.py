@@ -45,7 +45,9 @@ def feedback(request):
     form = UsersFeedbackForm()
 
     data = {
-        'form': form}
+        'form': form,
+        'error': error}
+    
     return render(request, 'feedback.html', data)
 
     
