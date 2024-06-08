@@ -1,0 +1,81 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+
+# If your project includes specific database files:
+*.db
+
+# Local development settings
+local_settings.py
+
+# Environment variables files
+.env
+
+# Django migrations
+*/migrations/*
+
+# Ignore all migrations
+**/migrations/*
+
+# If you are using media or static files in your project, you can exclude them:
+# Media files
+media/
+
+# Static files
+static/
+
+# If you use a deployment tool like Docker, you might want to ignore its files
+# Docker files
+*.log
+*.swp
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# If you use virtual environments, you can ignore the virtual environment directory:
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# PyCharm specific files
+.idea/
+
+# VS Code specific files
+.vscode/
+
+# Jupyter Notebook files
+.ipynb_checkpoints
+
+# System-specific files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+.nox/
+.cache
+coverage.xml
+nosetests.xml
+coverage/
+
+# pytest
+.pytest_cache/
+
+

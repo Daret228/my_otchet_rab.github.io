@@ -1,9 +1,0 @@
-/.venv
-*.pyc
-*.egg-info
-*.swp
-*.swo
-*.log
-*.lock
-*.sqlite3
-
