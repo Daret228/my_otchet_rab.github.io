@@ -5,17 +5,13 @@ from django.contrib.auth.models import User
 from .forms import AccountForm, UsersFeedbackForm
 
 
-
 def index(request):
     error = 'Всё хорошо'
     if request.method == 'POST':
         form = AccountForm(request.POST)
         if form.is_valid():
-            name = form.cleaned_data['username']
-            email = form.cleaned_data['email']
-            phone = form.cleaned_data['phone']
-            password = form.cleaned_data['password']
-            print(name, email, phone, password)
+            form.save()
+            messages.success(request, 'Регистрация успешна')
 
             if User.objects.filter(email=email).exists():
                 error = 'Пользователь с таким email уже существует'
@@ -49,38 +45,9 @@ def feedback(request):
     form = UsersFeedbackForm()
 
     data = {
-        'form': form,
-        'error': error
-        }
-    
+        'form': form}
     return render(request, 'feedback.html', data)
 
-# def register(request):
-#     if request.method == 'POST':
-#         form = RegistrationForm(request.POST)
-#         if form.is_valid():
-#             name = form.cleaned_data['name']
-#             email = form.cleaned_data['email']
-#             phone = form.cleaned_data['phone']
-#             password = form.cleaned_data['password']
-#             password_confirm = form.cleaned_data['password_confirm']
-
-#             if password == password_confirm:
-#                 if User.objects.filter(email=email).exists():
-#                     messages.error(request, 'Пользователь с таким email уже существует')
-#                 elif User.objects.filter(username=phone).exists():
-#                     messages.error(request, 'Пользователь с таким номером телефона уже существует')
-#                 else:
-#                     user = User.objects.create_user(username=phone, password=password, email=email, first_name=name)
-#                     user.save()
-#                     messages.success(request, 'Регистрация успешна')
-#                     return redirect('index')
-#             else:
-#                 messages.error(request, 'Пароли не совпадают')
-#     else:
-#         form = RegistrationForm()
-
-#     return render(request, 'index.html', {'form': form})
     
 
 
