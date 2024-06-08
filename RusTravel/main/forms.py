@@ -60,5 +60,3 @@ class AccountForm(ModelForm):
                 'placeholder': 'Пароль'
                 })
             }
-                
-  

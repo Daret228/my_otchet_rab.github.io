@@ -12,16 +12,8 @@ def index(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Регистрация успешна')
-
-            if User.objects.filter(email=email).exists():
-                error = 'Пользователь с таким email уже существует'
-            elif User.objects.filter(username=name).exists():
-                error = 'Пользователь с таким номером телефона уже существует'
-            else:
-                user = User.objects.create_user(username=name, password=password, email=email, phone=phone)
-                user.save()
-                messages.success(request, 'Регистрация успешна')
-                return redirect('index')
+            form.save()
+            return redirect('index')
             
         else:
             messages.error(request, 'Попробуйте ещё раз')
@@ -49,8 +41,6 @@ def feedback(request):
         'error': error}
     
     return render(request, 'feedback.html', data)
-
-    
 
 
 # def login_view(request):
