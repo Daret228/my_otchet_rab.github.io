@@ -1,5 +1,5 @@
 <!-- modal_auth.html -->
-<div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+<div class="modal fade" id="authModal" aria-labelledby="authModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,33 +10,45 @@
             </div>
             <div class="modal-body">
 
+                {% comment %} Форма регистрации {% endcomment %}
                 <div class="left">
                     <h2>Регистрация</h2>
                     <form method="post" action="{% url 'index' %}">
                         {% csrf_token %}
-                        {{ form.username }}
-                        {{ form.email }}
-                        {{ form.phone }}
-                        {{ form.password }}
-                        <span>{{ error }}</span>
-                        <button id="myButton0" type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                        <div class="form-group">
+                            {{ formReg.username }}
+                        </div>
+                        <div class="form-group">
+                            {{ formReg.email }}
+                        </div>
+                        <div class="form-group">
+                            {{ formReg.phone }}
+                        </div>
+                        <div class="form-group">
+                            {{ formReg.password }}
+                        </div>
+                        <button name="button_reg" type="submit" class="btn btn-primary">Зарегистрироваться</button>
                     </form>
                 </div>
 
                 <div class="modal-split"></div> <!-- Прорезь между блоками -->
 
+                {% comment %} Форма входа {% endcomment %}
                 <div class="right">
                     <h2>Войти</h2>
                     <form method="post" action="{% url 'index' %}">
                         {% csrf_token %}
-                        <div class="form-group">
-                            <input type="text" name="username" class="form-control" placeholder="Имя или Email или номер телефона" required>
+
+                        {{ formLog.as_p }}
+
+                        {% comment %} <div class="form-group">
+                            {{ formLog.username }}
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" class="form-control" placeholder="Пароль" required>
-                        </div>
-                        <button id="myButton1" type="submit" class="btn btn-primary">Войти</button>
-                        
+                            {{ formLog.password }}
+                        </div> {% endcomment %}
+
+                        <button name="button_log" type="submit" class="btn btn-primary">Войти</button>
                     </form>
                 </div>
                 
