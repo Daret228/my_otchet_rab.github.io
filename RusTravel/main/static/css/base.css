@@ -116,14 +116,15 @@ body {
 
 
 /* Стилизация страницы с отзывами */
-
+/* 
 .feedback-title-left {
   margin-left: 35px;
   width: 90%;
   margin-top: -25px;
   text-align: center;
 }
-/* 
+
+
 .feedback-form {
 flex-direction: column;
 width: 80%;
@@ -133,7 +134,8 @@ margin-bottom: 10px;
 border: 1px solid #ccc;
 border-radius: 10px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}  */
+} 
+
 
 
 .container-feedback {
@@ -163,7 +165,7 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding-top: 5px;
 }
 
-form {
+/* form {
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -172,7 +174,7 @@ form {
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+} 
 
 label {
   margin-bottom: 5px;
@@ -196,4 +198,4 @@ input, textarea {
   
   .btn-feedback:hover {
   background-color: #464646;
-  }
+  } */
