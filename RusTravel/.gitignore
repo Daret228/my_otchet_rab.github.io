@@ -35,7 +35,6 @@ local_settings.py
 media/
 
 # Static files
-static/
 
 # If you use a deployment tool like Docker, you might want to ignore its files
 # Docker files
