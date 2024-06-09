@@ -44,7 +44,6 @@ def index(request):
         'formReg': formReg,
         'formLog': formLog
     }
-    print(data)
     return render(request, 'index.html', data)
 
 

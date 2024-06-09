@@ -1,3 +1,4 @@
+# main/models.py
 from django.db import models
 
 # Таблица для страницы с отзывами
