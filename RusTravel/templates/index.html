@@ -4,6 +4,24 @@
 
 {% block content %}
 
+{% comment %} {% if show_register_alert %}
+    <script>
+        $(document).ready(function() {
+            alert('Регистрация успешна! Теперь вы можете войти, используя свои данные.');
+            $('#authModal').modal('show');
+        });
+    </script>
+    {% endif %}
+
+{% if show_login_alert %}
+    <script>
+        $(document).ready(function() {
+            alert('Вы успешно вошли в систему!');
+        });
+    </script>
+{% endif %} {% endcomment %}
+
+{% csrf_token %}
 <div class="container mt-5">
     <div id="cityCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">

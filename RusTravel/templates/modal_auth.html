@@ -38,16 +38,17 @@
                     <h2>Войти</h2>
                     <form method="post" action="{% url 'index' %}">
                         {% csrf_token %}
-
-                        {{ formLog.as_p }}
-
-                        {% comment %} <div class="form-group">
+                        <div class="form-group">
                             {{ formLog.username }}
                         </div>
                         <div class="form-group">
                             {{ formLog.password }}
-                        </div> {% endcomment %}
-
+                        </div>
+                        {% if formLog.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ formLog.errors }}
+                            </div>
+                        {% endif %}
                         <button name="button_log" type="submit" class="btn btn-primary">Войти</button>
                     </form>
                 </div>
