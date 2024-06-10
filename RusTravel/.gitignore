@@ -12,8 +12,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.sqlite3
-*.db
+
 
 # If your project includes specific database files:
 *.db
