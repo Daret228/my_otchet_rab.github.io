@@ -8,7 +8,7 @@ from django.core.mail import send_mail
 from django.urls import reverse
 
 
-def index(request):
+def modal_auth(request):
     formReg = AccountFormRegister()
     formLog = CustomLoginForm()
 
@@ -45,15 +45,19 @@ def index(request):
             else:
                 messages.error(request, 'Попробуйте ещё раз')
 
+    return {'formReg': formReg, 'formLog': formLog}
+
+
+def index(request):
+    modal_form = modal_auth(request)
     data = {
-        'formReg': formReg,
-        'formLog': formLog,
-        'show_register_alert': show_register_alert,
-        'show_login_alert': show_login_alert
+        'formReg': modal_form['formReg'],
+        'formLog': modal_form['formLog'],
     }
     return render(request, 'index.html', data)
 
 def feedback(request):
+    modal_form = modal_auth(request)
     news = UsersFeedback.objects.all()
     if request.method == 'POST':
         form = UsersFeedbackForm(request.POST)
@@ -64,6 +68,8 @@ def feedback(request):
         form = UsersFeedbackForm()
 
     data = {
+        'formReg': modal_form['formReg'],
+        'formLog': modal_form['formLog'],
         'news': news,
         'form': form
     }
@@ -78,9 +84,15 @@ def profile(request):
     return render(request, 'profile.html')
 
 def about(request):
-    return render(request, 'about.html')
+    modal_form = modal_auth(request)
+    data = {
+    'formReg': modal_form['formReg'],
+    'formLog': modal_form['formLog'],
+    }
+    return render(request, 'about.html', data)
 
 def help_view(request):
+    modal_form = modal_auth(request)
     if request.method == 'POST':
         email = request.POST.get('email')
         subject = request.POST.get('subject')
@@ -96,4 +108,9 @@ def help_view(request):
 
         return redirect(reverse('help'))
 
-    return render(request, 'help.html')
+    data = {
+        'formReg': modal_form['formReg'],
+        'formLog': modal_form['formLog'],
+    }
+
+    return render(request, 'help.html', data)

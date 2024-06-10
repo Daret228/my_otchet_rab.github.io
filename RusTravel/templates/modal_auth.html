@@ -13,7 +13,7 @@
                 {% comment %} Форма регистрации {% endcomment %}
                 <div class="left">
                     <h2>Регистрация</h2>
-                    <form method="post" action="{% url 'index' %}">
+                    <form method="post" action="{% url 'modal_auth' %}">
                         {% csrf_token %}
                         <div class="form-group">
                             {{ formReg.username }}
@@ -36,7 +36,7 @@
                 {% comment %} Форма входа {% endcomment %}
                 <div class="right">
                     <h2>Войти</h2>
-                    <form method="post" action="{% url 'index' %}">
+                    <form method="post" action="{% url 'modal_auth' %}">
                         {% csrf_token %}
                         <div class="form-group">
                             {{ formLog.username }}
