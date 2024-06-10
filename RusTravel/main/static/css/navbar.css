@@ -1,0 +1,31 @@
+.navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #dee2e6;
+}
+.navbar .navbar-brand {
+    font-size: 22px;
+    font-weight: bold;
+    align-items: center;
+    padding-top: 10px;
+    vertical-align: baseline;
+}
+.navbar .navbar-nav .nav-link {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+/* Исправление проблемы с выпадающим меню */
+.nav-item.dropdown .dropdown-menu {
+    right: 0;
+    left: auto;
+}
+
+/* Адаптивные стили для выпадающего меню */
+@media (max-width: 768px) {
+    .nav-item.dropdown .dropdown-menu {
+        position: static;
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+}

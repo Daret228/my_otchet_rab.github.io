@@ -1,0 +1,46 @@
+/* modal_auth.css */
+
+.modal-dialog {
+    max-width: 80%;
+}
+
+.modal-body {
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+}
+
+.modal-body .left {
+    flex: 0.98;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.modal-body .right {
+    flex: 0.99;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+.modal-body .left.left,
+.modal-body .right.left {
+    background-color: #d69fa4;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.modal-body .left.right,
+.modal-body .right.right {
+    background-color: #c2b9b0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.modal-split {
+    width: 10px;
+    background: #fff;
+}
