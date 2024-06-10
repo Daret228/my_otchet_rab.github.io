@@ -4,6 +4,8 @@ from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from .models import UsersFeedback, Account
 from .forms import AccountFormRegister, CustomLoginForm, UsersFeedbackForm
+from django.core.mail import send_mail
+from django.urls import reverse
 
 
 def index(request):
@@ -77,3 +79,21 @@ def profile(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def help_view(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        full_message = f"Сообщение от {email}\n\n{message}"
+
+        send_mail(
+            subject,
+            full_message,
+            email,
+            ['levaborisixin@gmail.com']
+        )
+
+        return redirect(reverse('help'))
+
+    return render(request, 'help.html')

@@ -1,0 +1,56 @@
+.help-container {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 80%; 
+    margin: auto;
+    height: 550px;
+}
+
+
+.card-header h2 {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.form-group label {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+#message {
+    height: auto;
+    max-height: 400px;
+    resize: vertical;
+}
+
+.btn-help {
+    margin-top: 20px;
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@media (max-width: 992px) {
+    .card {
+        margin: auto;
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        margin: auto;
+        width: 100%;
+    }
+}

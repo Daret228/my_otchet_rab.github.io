@@ -19,6 +19,14 @@ LOGOUT_REDIRECT_URL = 'index'
 LOGIN_REDIRECT_URL = 'index'
 
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = "your@mail.ru"
+EMAIL_HOST_PASSWORD = "password"
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
