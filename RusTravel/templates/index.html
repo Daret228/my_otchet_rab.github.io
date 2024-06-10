@@ -61,4 +61,45 @@
     </div>
 </div>
 
+<div class="container mt-5">
+    <div class="row text-center icons-section">
+        <div class="col-md-2 col-sm-4 col-6 icon-container animate__animated">
+            <img src="{% static 'images/location.png' %}" alt="Интересные места" class="icon">
+            <p>Интересные места</p>
+        </div>
+        <div class="col-md-2 col-sm-4 col-6 icon-container animate__animated">
+            <img src="{% static 'images/bear.png' %}" alt="Отдых с детьми" class="icon">
+            <p>Отдых с детьми</p>
+        </div>
+        <div class="col-md-2 col-sm-4 col-6 icon-container animate__animated">
+            <img src="{% static 'images/machine.png' %}" alt="Лечение" class="icon">
+            <p>Лечение</p>
+        </div>
+        <div class="col-md-2 col-sm-4 col-6 icon-container animate__animated">
+            <img src="{% static 'images/key.png' %}" alt="Недвижимость" class="icon">
+            <p>Недвижимость</p>
+        </div>
+        <div class="col-md-2 col-sm-4 col-6 icon-container animate__animated">
+            <img src="{% static 'images/backpack.png' %}" alt="Активный отдых" class="icon">
+            <p>Активный отдых</p>
+        </div>
+        <div class="col-md-2 col-sm-4 col-6 icon-container animate__animated">
+            <img src="{% static 'images/camera.png' %}" alt="Экскурсии" class="icon">
+            <p>Экскурсии</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    //  Анимация при наведении на иконки 
+    document.querySelectorAll('.icon-container').forEach(item => {
+        item.addEventListener('mouseover', () => {
+            item.classList.add('animate__pulse');
+        });
+        item.addEventListener('mouseleave', () => {
+            item.classList.remove('animate__pulse');
+        });
+    });
+</script>
+
 {% endblock %}

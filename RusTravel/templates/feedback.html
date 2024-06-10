@@ -1,32 +1,25 @@
-<!--template/feedback.html -->
-{% extends 'base.html' %} 
-{% load static %} 
-{% block content %}
+{% extends 'base.html' %}
+{% load static %}
 
+{% block content %}
 <div class="container-feedback">
-    <div class="left-side">
+    <div class="feedback-form-container">
         <div class="feedback-title-left">
-            <h2>
-                Поделитесь с нами вашими впечатлениями о нашем путеводителе!
-            </h2>
+            <h2>Поделитесь вашими впечатлениями!</h2>
         </div>
         <form method="POST" сlass="feedback-form">
-            {% csrf_token %} 
-            {{form.username}} 
-            {{form.email}} 
-            {{form.feedback}}
+            {% csrf_token %}
+            {{ form.username }}
+            {{ form.email }}
+            {{ form.feedback }}
             <span>{{ error }}</span>
-            <button class="btn-feedback" type="submit">Отправить</button>
+            <button class="btn btn-primary" type="submit">Отправить</button>
         </form>
     </div>
-    <div class="right-side">
+    <div class="reviews-container">
         <div class="feedback-title-right">
-            <h2>
-                Множество пользователей уже воспользовались путеводителем
-                RusVoyage!
-            </h2>
+            <h2>Отзывы наших путешественников!</h2>
         </div>
-
         {% for review in news %}
         <div class="review">
             <h3>{{ review.username }}</h3>
@@ -35,5 +28,4 @@
         {% endfor %}
     </div>
 </div>
-
 {% endblock %}

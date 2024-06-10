@@ -5,12 +5,10 @@ from django.contrib.auth.decorators import login_required
 from .models import UsersFeedback, Account
 from .forms import AccountFormRegister, CustomLoginForm, UsersFeedbackForm
 
+
 def index(request):
     formReg = AccountFormRegister()
     formLog = CustomLoginForm()
-
-    show_register_alert = request.session.pop('show_register_alert', False)
-    show_login_alert = request.session.pop('show_login_alert', False)
 
     if request.method == 'POST':
         if "button_log" in request.POST:
@@ -27,7 +25,7 @@ def index(request):
                         request.session['user_id'] = account.id
                         request.session['username'] = account.username
                         request.session['show_login_alert'] = True
-                        return redirect('index')
+                        return redirect('profile')
                     else:
                         print(4)
                 except Account.DoesNotExist:
@@ -45,8 +43,6 @@ def index(request):
     data = {
         'formReg': formReg,
         'formLog': formLog,
-        'show_register_alert': show_register_alert,
-        'show_login_alert': show_login_alert
     }
     return render(request, 'index.html', data)
 

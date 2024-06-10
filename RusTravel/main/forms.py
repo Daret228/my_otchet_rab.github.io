@@ -9,16 +9,17 @@ class UsersFeedbackForm(forms.ModelForm):
         fields = ['username', 'email', 'feedback']
         widgets = {
             "username": TextInput(attrs={
-                'class': 'feedback-form',
+                'class': 'form-control',
                 'placeholder': 'Ваше имя'
             }),
-            "email": TextInput(attrs={
-                'class': 'feedback-form',
+            "email": forms.EmailInput(attrs={
+                'class': 'form-control',
                 'placeholder': 'E-mail'
             }),
             "feedback": forms.Textarea(attrs={
-                'class': 'feedback-form',
-                'placeholder': 'Ваш отзыв'
+                'class': 'form-control',
+                'placeholder': 'Ваш отзыв',
+                "rows": 8,
             })
         }
 

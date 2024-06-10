@@ -1,113 +1,95 @@
-/* Стилизация страницы с отзывами */
+/* Стили для контейнера feedback */
+.container-feedback {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px;
+}
 
-.feedback-title-left {
-    margin-left: 35px;
-    width: 90%;
-    margin-top: -200px;
+/* Стили для блока с формами */
+.feedback-form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Стили для блока с отзывами */
+.reviews-container {
+    width: 100%;
+}
+
+/* Стили для комментариев */
+.feedback-title-left,
+.feedback-title-right {
     text-align: center;
-    
-    }
-    
-    
-    .feedback-form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: 20px auto;
+    margin-bottom: 20px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Стили для кнопки */
+.btn-primary {
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Стили для отдельного комментария */
+.review {
+    background-color: #f8f9fa;
     padding: 20px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    
-    
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для комментариев */
+.feedback-title-left h2,
+.feedback-title-right h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.review h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.review p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Подчеркивание для заголовков */
+.feedback-title-left h2::after,
+.feedback-title-right h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: #007bff;
+    margin: 10px auto;
+}
+
+/* Стили для комментариев */
+.feedback-title-left h2,
+.feedback-title-right h2 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Медиа запросы для больших экранов */
+@media (min-width: 768px) {
     .container-feedback {
-    display: flex;
-    /* flex-direction: row;
-    justify-content: space-between; */
-    align-items: center;
-    width: 133%;
-    height: 120vh;
-    margin-left: -180px;
-    
+        flex-wrap: nowrap;
     }
-    
-    
-    .left-side {
-    width: 50%;
-    padding-top: 5px;
-    
+
+    .feedback-form-container,
+    .reviews-container {
+        width: 48%;
+        margin: 0;
     }
-    
-    .feedback-title-right {
-    margin-left: 15px;
-    width: 95%;
-    margin-top: -30px;
-    text-align: center;
-    }
-    
-    .right-side {
-    width: 50%;
-    padding-top: 5px;
-    }
-    /*
-    form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    } */
-    
-    label {
-    margin-bottom: 5px;
-    }
-    
-    input, textarea {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    }
-    
-    .btn-feedback {
-    background-color: #000000;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 80%;
-    margin: 20px auto;
-    margin-left: 73px;
-    margin-bottom: 10px;
-    
-    }
-    
-    .btn-feedback:hover {
-    background-color: #464646;
-    }
-    
-    .review {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    margin-bottom: 10px;
-    width: 80%;
-    margin: 20px auto;
-    margin-bottom: 10px;
-    border: 2px solid #d4d4d4;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    .review:hover {
-    animation: pulse;
-    animation-duration: 2s;
-    }
+}
+

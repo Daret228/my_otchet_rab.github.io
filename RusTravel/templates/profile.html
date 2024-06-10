@@ -1,9 +1,44 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2>Мой кабинет</h2>
-    {% comment %} <p>Добро пожаловать, {{ request.session.username }}!</p> {% endcomment %}
+
+<div class="container-profile">
+    <div class="header animate__animated animate__fadeIn">
+        <h2><p>Добро пожаловать, {{ request.session.username }}!</p></h2>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card animate__animated animate__fadeIn">
+                <img src="{% static 'images/booking.png' %}" class="card-img-top" alt="Посмотрите ваши последние бронирования и добавьте новое.">
+                <div class="card-body">
+                    <h5 class="card-title">Мои бронирования</h5>
+                    <p class="card-text">Посмотрите ваши последние бронирования и добавьте новое.</p>
+                    <a href="#" class="btn btn-primary">Перейти</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card animate__animated animate__fadeIn">
+                <img src="{% static 'images/testimonials.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Мои отзывы</h5>
+                    <p class="card-text">Оставьте новый отзыв о вашем путешествии.</p>
+                    <a href="#" class="btn btn-primary">Перейти</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card animate__animated animate__fadeIn">
+                <img src="{% static 'images/account.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Личные данные</h5>
+                    <p class="card-text">Просмотр и редактирование ваших личных данных.</p>
+                    <a href="#" class="btn btn-primary">Перейти</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

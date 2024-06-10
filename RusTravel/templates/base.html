@@ -1,4 +1,6 @@
-<!-- template/base.html -->
+<!-- Модальное окно для авторизации -->
+{% include 'modal_auth.html' %}
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -12,10 +14,13 @@
     <link rel="icon" type="image/ico" href="{% static 'images/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/feedback-css.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile-css.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/modal_auth.css' %}">
 </head>
 <body>
-    <!-- Модальное окно для авторизации -->
-    {% include 'modal_auth.html' %}
+    
     <!-- Навигационный бар -->
     {% include 'navbar.html' %}
 
