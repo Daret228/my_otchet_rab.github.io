@@ -4,7 +4,7 @@
 
 {% block content %}
 
-{% comment %} {% if show_register_alert %}
+{% if show_register_alert %}
     <script>
         $(document).ready(function() {
             alert('Регистрация успешна! Теперь вы можете войти, используя свои данные.');
@@ -19,7 +19,7 @@
             alert('Вы успешно вошли в систему!');
         });
     </script>
-{% endif %} {% endcomment %}
+{% endif %}
 
 {% csrf_token %}
 <div class="container mt-5">
