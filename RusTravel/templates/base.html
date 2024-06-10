@@ -1,8 +1,3 @@
-<!-- base.html -->
-
-<!-- Модальное окно для авторизации -->
-{% include 'modal_auth.html' %}
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -20,6 +15,7 @@
     <link rel="stylesheet" href="{% static 'css/profile-css.css' %}">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/modal_auth.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}"> <!-- Подключение about.css -->
 </head>
 <body>
     
@@ -48,7 +44,6 @@
     </script>
     {% endif %}
 
-    <!-- Подключение Bootstrap JS и jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

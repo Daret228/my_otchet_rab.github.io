@@ -1,0 +1,43 @@
+<!-- about.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-about">
+    <div class="about-header text-center">
+        <h2>О нас</h2>
+    </div>
+    <div class="about-intro text-center">
+        <p>Мы, студенты которые решили сделать сайт для туристов по городам России. У нас есть много плюсов, таких как:</p>
+    </div>
+    <div class="about-features">
+        <div class="row">
+            <div class="col-md-6 feature-item">
+                <img src="{% static 'images/convenience.png' %}" alt="Удобство" class="feature-image">
+                <h3>Удобство</h3>
+                <p>Всё на одном сайте</p>
+            </div>
+            <div class="col-md-6 feature-item">
+                <img src="{% static 'images/interface.png' %}" alt="Интерфейс" class="feature-image">
+                <h3>Интуитивно понятный интерфейс</h3>
+                <p>Легкость в использовании</p>
+            </div>
+            <div class="col-md-6 feature-item">
+                <img src="{% static 'images/reviews.png' %}" alt="Отзывы" class="feature-image">
+                <h3>Большая база отзывов</h3>
+                <p>Отзывы от проверенных клиентов</p>
+            </div>
+            <div class="col-md-6 feature-item">
+                <img src="{% static 'images/discounts.png' %}" alt="Скидки" class="feature-image">
+                <h3>Скидки на полёты</h3>
+                <p>Экономьте с нашими предложениями</p>
+            </div>
+            <div class="col-md-12 feature-item">
+                <img src="{% static 'images/memories.png' %}" alt="Воспоминания" class="feature-image">
+                <h3>Возможность коллекционирования воспоминаний</h3>
+                <p>Сохраняйте лучшие моменты</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
