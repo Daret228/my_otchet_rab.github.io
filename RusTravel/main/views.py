@@ -1,3 +1,4 @@
+# main/views.py
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import logout
@@ -12,8 +13,8 @@ def modal_auth(request):
     formReg = AccountFormRegister()
     formLog = CustomLoginForm()
 
-    show_register_alert = request.session.pop('show_register_alert', False)
-    show_login_alert = request.session.pop('show_login_alert', False)
+    # show_register_alert = request.session.pop('show_register_alert', False)
+    # show_login_alert = request.session.pop('show_login_alert', False)
 
     if request.method == 'POST':
         if "button_log" in request.POST:

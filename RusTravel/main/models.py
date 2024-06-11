@@ -19,7 +19,7 @@ class Account(models.Model):
     password = models.CharField(max_length=100, blank=False)
 
     def save(self, *args, **kwargs):
-        if not self.id:  # Только при создании нового пользователя
+        if not self.id:  # Для нового юзера
             self.password = make_password(self.password)
         super().save(*args, **kwargs)
 
