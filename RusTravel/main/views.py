@@ -105,20 +105,24 @@ def help_view(request):
         email = request.POST.get('email')
         subject = request.POST.get('subject')
         message = request.POST.get('message')
+
         full_message = f"Сообщение от {email}\n\n{message}"
 
         send_mail(
             subject,
             full_message,
-            email,
-            ['levaborisixin@gmail.com']
+            'levaborisixin@gmail.com',  
+            ['lev.it.up0@gmail.com'],  
+            fail_silently=False,
         )
 
-        return redirect(reverse('help'))
+        messages.success(request, 'Ваше сообщение было отправлено!')
+        return HttpResponseRedirect(reverse('send_help_email') + '?success=1')
 
     data = {
         'formReg': modal_form['formReg'],
         'formLog': modal_form['formLog'],
     }
 
+        
     return render(request, 'help.html', data)
