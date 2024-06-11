@@ -1,6 +1,7 @@
 # main/views.py
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.http import JsonResponse, HttpResponseRedirect
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from .models import UsersFeedback, Account
@@ -34,8 +35,13 @@ def modal_auth(request):
                         return redirect('profile')
                     else:
                         print(4)
+                        return HttpResponseRedirect(reverse('index'))
                 except Account.DoesNotExist:
+                    return HttpResponseRedirect(reverse('index'))
                     print(5)
+            else:
+                formLog = CustomLoginForm()
+
         if "button_reg" in request.POST:
             formReg = AccountFormRegister(request.POST)
             if formReg.is_valid():
@@ -45,6 +51,9 @@ def modal_auth(request):
                 return redirect('index')
             else:
                 messages.error(request, 'Попробуйте ещё раз')
+        
+        else:
+            formReg = AccountFormRegister()
 
     return {'formReg': formReg, 'formLog': formLog}
 
