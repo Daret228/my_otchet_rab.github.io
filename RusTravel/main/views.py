@@ -14,32 +14,27 @@ def modal_auth(request):
     formReg = AccountFormRegister()
     formLog = CustomLoginForm()
 
-    # show_register_alert = request.session.pop('show_register_alert', False)
-    # show_login_alert = request.session.pop('show_login_alert', False)
-
     if request.method == 'POST':
         if "button_log" in request.POST:
             formLog = CustomLoginForm(request.POST)
-            print(1)
             if formLog.is_valid():
-                print(2)
                 username = formLog.cleaned_data.get('username')
                 password = formLog.cleaned_data.get('password')
                 try:
                     account = Account.objects.get(username=username)
                     if account.check_password(password):
-                        print(3)
                         request.session['user_id'] = account.id
                         request.session['username'] = account.username
                         request.session['show_login_alert'] = True
                         return redirect('profile')
                     else:
-                        print(4)
+                        messages.error(request, 'Неверное имя пользователя или пароль')
                         return HttpResponseRedirect(reverse('index'))
                 except Account.DoesNotExist:
+                    messages.error(request, 'Аккаунт не найден')
                     return HttpResponseRedirect(reverse('index'))
-                    print(5)
             else:
+                messages.error(request, 'Форма входа недействительна')
                 formLog = CustomLoginForm()
 
         if "button_reg" in request.POST:
@@ -47,13 +42,16 @@ def modal_auth(request):
             if formReg.is_valid():
                 formReg.save()
                 messages.success(request, 'Регистрация успешна')
+                username = formReg.cleaned_data.get('username')
+                password = formReg.cleaned_data.get('password')
+                account = Account.objects.get(username=username)
                 request.session['show_register_alert'] = True
-                return redirect('index')
+                request.session['user_id'] = account.id
+                request.session['username'] = account.username
+                return redirect('profile')
             else:
-                messages.error(request, 'Попробуйте ещё раз')
-        
-        else:
-            formReg = AccountFormRegister()
+                messages.error(request, 'Ошибка регистрации. Попробуйте ещё раз')
+                return HttpResponseRedirect(reverse('index'))
 
     return {'formReg': formReg, 'formLog': formLog}
 
