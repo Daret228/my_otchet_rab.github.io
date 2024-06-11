@@ -57,3 +57,13 @@
         </div>
     </div>
 </div>
+
+{% comment %} <script>
+    $(document).ready(function() {
+        {% if messages %}
+            {% for message in messages %}
+                alert("{{ message }}");
+            {% endfor %}
+        {% endif %}
+    });
+</script> {% endcomment %}

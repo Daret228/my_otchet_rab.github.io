@@ -43,6 +43,12 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.review:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px, -5px);
+    transition: box-shadow 0.5s, transform 0.5s;
+}
+
 /* Стили для комментариев */
 .feedback-title-left h2,
 .feedback-title-right h2 {
