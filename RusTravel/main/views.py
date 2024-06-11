@@ -111,8 +111,8 @@ def help_view(request):
         send_mail(
             subject,
             full_message,
-            'levaborisixin@gmail.com',  
-            ['lev.it.up0@gmail.com'],  
+            'your@gmail.com',  
+            ['#@gmail.com'],  
             fail_silently=False,
         )
 

@@ -24,8 +24,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'levaborisixin@gmail.com'  # Ваш email
-EMAIL_HOST_PASSWORD = 'bsfi nnbi zevk jiqu'  # Ваш пароль от email
+EMAIL_HOST_USER = ''  # Ваш email
+EMAIL_HOST_PASSWORD = ''  # Ваш пароль от email
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
